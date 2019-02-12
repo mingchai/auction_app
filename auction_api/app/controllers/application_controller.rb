@@ -13,8 +13,7 @@ class ApplicationController < ActionController::API
     
     def authenticate_user!
         unless user_signed_in?
-            flash[:danger] = "Please sign in or sign up"
-            redirect_to new_session_path
+            render json: {status: 401, message:"User must sign in or sign up"}, status: 401
         end
     end
     
