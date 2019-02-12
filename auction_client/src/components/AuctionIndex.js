@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import Auction from "../requests"
+import Auction from "../requests";
+import {Link} from "react-router-dom";
 
 class AuctionIndex extends Component {
   constructor(props){
@@ -12,12 +13,17 @@ class AuctionIndex extends Component {
   render(){
     return(
       <main>
-        <h1>Auction Index</h1>
+        <h1>Auctions</h1>
+        <ul>
         {
           this.state.auctions.map(auction => 
-            <h4>{auction.title}</h4>
+            <li key={auction.id}>
+            <Link to={`/auctions/${auction.id}`}><h4>{auction.title}</h4></Link>
+            <small>Auction Started: {(auction.created_at).toString()}</small>
+            </li>
             )
         }
+        </ul>
       </main>
     )
   }

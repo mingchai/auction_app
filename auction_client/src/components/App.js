@@ -2,14 +2,23 @@ import React, { Component } from 'react';
 import '../App.css';
 import WelcomePage from './WelcomPage';
 import AuctionIndex from './AuctionIndex';
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import NavBar from "./NavBar";
+import AuctionShow from './AuctionShow';
 
 class App extends Component {
   render() {
     return (
+      <BrowserRouter>
       <main>
-        <WelcomePage/>
+        <NavBar/>
+        <Switch>
+        <Route path = "/" exact render={WelcomePage}/>
+        {/* <Route path = "/auctions/:id" exact render={AuctionShow}/> */}
         <AuctionIndex/>
+        </Switch>
       </main>
+      </BrowserRouter>
     );
   }
 }
