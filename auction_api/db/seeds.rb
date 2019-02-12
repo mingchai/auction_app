@@ -21,15 +21,15 @@ users = User.all
   a = Auction.create(
     title: Faker::Commerce.product_name,
     description: Faker::IDNumber.valid,
-    price: Faker::Commerce.price(range = 10.0..10000.0, as_string = false),
+    price: Faker::Commerce.price(range = 10.00..10000.00, as_string = false),
     reserve: ["true", "false"].sample,
-    reserve_price: Faker::Commerce.price(range = 10.0..1000.0, as_string = false),
+    reserve_price: Faker::Commerce.price(range = 10.00..1000.00, as_string = false),
     expiry_date: Faker::Date.forward(60),
     user: users.sample
   )
   rand(1..10).times do
     a.bids << Bid.new(
-      price: Faker::Commerce.price(range = 10.0..10000.0, as_string = false),
+      price: Faker::Commerce.price(range = 10.00..10000.00, as_string = false),
       user: users.sample
     )
   end

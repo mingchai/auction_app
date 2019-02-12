@@ -11,6 +11,12 @@ class BidsController < ApplicationController
     end
   end
 
+  def index
+    auction = Auction.find params[:auction_id]
+    bids = auction.bids.order(created_at: :desc, price: :asc)
+    render json: bids
+  end
+
   private
 
   def bid_params
