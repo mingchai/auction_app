@@ -1,4 +1,5 @@
 class BidsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
   def create
     bid = Bid.new bid_params
     bid.user = current_user
