@@ -14,7 +14,8 @@ class App extends Component {
         <NavBar/>
         <Switch>
         <Route path = "/" exact render={WelcomePage}/>
-        {/* <Route path = "/auctions/:id" exact render={AuctionShow}/> */}
+        <Route path = "/auctions" exact component={AuctionIndex}/>
+        <Route path = "/auctions/:id" component={AuctionShow}/>
         <AuctionIndex/>
         </Switch>
       </main>

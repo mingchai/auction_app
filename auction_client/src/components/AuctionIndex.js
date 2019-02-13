@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Auction from "../requests";
+import {Auction} from "../requests";
 import {Link} from "react-router-dom";
 
 class AuctionIndex extends Component {
