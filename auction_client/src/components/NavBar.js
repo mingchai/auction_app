@@ -13,12 +13,12 @@ const NavBar = props =>{
       •
       <NavLink exact to="/auctions">Active Auctions</NavLink>
       •
+      <NavLink exact to="/auctions/new">New Auction</NavLink>
+      •
       {currentUser ? (
       <> 
         <span>Hello, {currentUser}</span> 
         <a href="#not-used" onClick={handleSignOutClick}> Sign Out </a>
-        •
-        <NavLink exact to="/auctions/new">New Auction</NavLink>
       </>
         ):(<NavLink exact to="/sign_in"> Sign In </NavLink>)
       }
