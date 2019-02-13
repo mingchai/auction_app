@@ -15,6 +15,9 @@ const Auction = {
 const Bid = {
   all(id){
     return fetch(`${BASE_URL}/auctions/${id}/bids`, {credentials: "include"}).then(res => res.json())
+  },
+  create(id, params){
+    return fetch(`${BASE_URL}/auctions/${id}/bids`, {credentials: "include", method: "POST", headers:{'Content-Type':'application/json'}, body: JSON.stringify(params)})
   }
 }
 

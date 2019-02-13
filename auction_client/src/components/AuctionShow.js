@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Auction, Bid} from "../requests";
 import AuctionDetails from "./AuctionDetails"
+import CreateBid from "./CreateBid";
 window.Bid = Bid
 class AuctionShow extends Component {
   constructor(props){
@@ -23,10 +24,11 @@ class AuctionShow extends Component {
       );
     }
     const {auction} = this.state;
+    const {bids} = auction;
     return(
       <main>
         <AuctionDetails {...this.state.auction} />
-        
+        <CreateBid  auctions = {this.state.auction}/>
         <br/>
         <h3>Bid History</h3>
         {this.state.bids.map(bid => 
