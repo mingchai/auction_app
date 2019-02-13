@@ -18,7 +18,7 @@ class App extends Component {
 
   getCurrentUser(){
     User.current().then(data =>{
-        const {current_user: currentUser} = data;
+        const {name: currentUser} = data;
         if(currentUser){this.setState({currentUser})};
     })
   }
@@ -39,10 +39,10 @@ class App extends Component {
       <main>
         <NavBar currentUser = {currentUser} onSignOut = {this.destroySession}/>
         <Switch>
+        <Route path = "/sign_in" exact render={routeProps => <SignInPage {...routeProps} onSignIn = {this.getCurrentUser}/>}/>
         <Route path = "/" exact render={WelcomePage}/>
         <Route path = "/auctions" exact component={AuctionIndex}/>
         <Route path = "/auctions/:id" component={AuctionShow}/>
-        <Route path = "/sign_in" exact component={SignInPage}/>
         <AuctionIndex/>
         </Switch>
       </main>

@@ -15,7 +15,7 @@ const NavBar = props =>{
       •
       {currentUser ? (
       <> 
-        <span>{currentUser.full_name}</span> 
+        <span>Hello, {currentUser}</span> 
         <a href="#not-used" onClick={handleSignOutClick}> Sign Out </a> 
       </>
         ):(<NavLink exact to="/sign_in"> Sign In </NavLink>)

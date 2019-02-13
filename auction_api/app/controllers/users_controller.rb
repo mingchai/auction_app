@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def current
-    render json: {status: 200, current_user: current_user.id}
+    render json: {status: 200, name: current_user.username}
   end
 
   private
