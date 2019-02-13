@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import WelcomePage from './WelcomPage';
 import AuctionIndex from './AuctionIndex';
+import AuctionNew from './AuctionNew';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import NavBar from "./NavBar";
 import AuctionShow from './AuctionShow';
@@ -42,6 +43,7 @@ class App extends Component {
         <Route path = "/sign_in" exact render={routeProps => <SignInPage {...routeProps} onSignIn = {this.getCurrentUser}/>}/>
         <Route path = "/" exact render={WelcomePage}/>
         <Route path = "/auctions" exact component={AuctionIndex}/>
+        <Route path = "/auctions/new" exact component={AuctionNew}/>
         <Route path = "/auctions/:id" component={AuctionShow}/>
         <AuctionIndex/>
         </Switch>
