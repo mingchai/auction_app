@@ -26,12 +26,16 @@ class AuctionShow extends Component {
     return(
       <main>
         <AuctionDetails {...this.state.auction} />
+        
         <br/>
         <h3>Bid History</h3>
         {this.state.bids.map(bid => 
+          <>
           <li key={bid.id}>
           ${bid.price} on {bid.created_at}
           </li>
+          <br/>
+          </>
           )}
       </main>
     )
