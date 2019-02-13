@@ -9,4 +9,10 @@ const Auction = {
   }
 }
 
-export default Auction;
+const Bid = {
+  all(id){
+    return fetch(`${BASE_URL}/auctions/${id}/bids`, {credentials: "include"}).then(res => res.json())
+  }
+}
+
+export {Auction, Bid};
