@@ -8,6 +8,7 @@ import NavBar from "./NavBar";
 import AuctionShow from './AuctionShow';
 import SignInPage from "./SignInPage";
 import {User, Session} from "../requests";
+import AuthRoute from "./AuthRoute";
 
 class App extends Component {
   constructor(props){
@@ -43,7 +44,7 @@ class App extends Component {
         <Route path = "/sign_in" exact render={routeProps => <SignInPage {...routeProps} onSignIn = {this.getCurrentUser}/>}/>
         <Route path = "/" exact render={WelcomePage}/>
         <Route path = "/auctions" exact component={AuctionIndex}/>
-        <Route path = "/auctions/new" exact component={AuctionNew}/>
+        <AuthRoute isAllowed={currentUser} path = "/auctions/new" exact component={AuctionNew}/>
         <Route path = "/auctions/:id" component={AuctionShow}/>
         <AuctionIndex/>
         </Switch>
