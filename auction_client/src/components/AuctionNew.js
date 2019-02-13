@@ -12,7 +12,7 @@ class AuctionNew extends Component {
       reserve_price: fD.get('reserve_price'),
       expiry_date: fD.get('expiry_date')
     }
-    Auction.create(newAuction).then(createdAuction =>{this.props.history.push(`/products/${createdAuction.id}`)})
+    Auction.create(newAuction).then(createdAuction =>{this.props.history.push(`/auctions/${createdAuction.id}`)})
   }
 
   render(){
